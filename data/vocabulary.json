@@ -1,0 +1,162 @@
+[
+  {
+    "id": "vocab_001",
+    "word": "abundant",
+    "translation": "plentiful",
+    "transcription": "/uh-BUHN-duhnt/",
+    "example": "The region has abundant natural resources.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_002",
+    "word": "acquire",
+    "translation": "to obtain or gain",
+    "transcription": "/uh-KWY-er/",
+    "example": "Students acquire new vocabulary through repeated practice.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_003",
+    "word": "adapt",
+    "translation": "to adjust to new conditions",
+    "transcription": "/uh-DAPT/",
+    "example": "Animals must adapt to changes in their environment.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_004",
+    "word": "adequate",
+    "translation": "sufficient",
+    "transcription": "/AD-uh-kwuht/",
+    "example": "The study provided adequate evidence for the theory.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_005",
+    "word": "advocate",
+    "translation": "to publicly support",
+    "transcription": "/AD-vuh-kayt/",
+    "example": "Many scientists advocate stronger climate policies.",
+    "level": "C1"
+  },
+  {
+    "id": "vocab_006",
+    "word": "allocate",
+    "translation": "to distribute for a purpose",
+    "transcription": "/AL-uh-kayt/",
+    "example": "The university will allocate more funds to research.",
+    "level": "C1"
+  },
+  {
+    "id": "vocab_007",
+    "word": "ambiguous",
+    "translation": "unclear or having multiple meanings",
+    "transcription": "/am-BIG-yoo-uhs/",
+    "example": "The instructions were ambiguous and confused many students.",
+    "level": "C1"
+  },
+  {
+    "id": "vocab_008",
+    "word": "analyze",
+    "translation": "to examine carefully",
+    "transcription": "/AN-uh-lyz/",
+    "example": "Researchers analyze data before drawing conclusions.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_009",
+    "word": "apparent",
+    "translation": "clearly visible or understood",
+    "transcription": "/uh-PAIR-uhnt/",
+    "example": "It became apparent that the experiment had failed.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_010",
+    "word": "approach",
+    "translation": "a method or way of doing something",
+    "transcription": "/uh-PROHCH/",
+    "example": "The professor used a new approach to teaching grammar.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_011",
+    "word": "assess",
+    "translation": "to evaluate",
+    "transcription": "/uh-SES/",
+    "example": "The test is designed to assess academic reading skills.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_012",
+    "word": "beneficial",
+    "translation": "helpful or useful",
+    "transcription": "/ben-uh-FISH-uhl/",
+    "example": "Regular review is beneficial for long-term memory.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_013",
+    "word": "coherent",
+    "translation": "clear and logically connected",
+    "transcription": "/koh-HEER-uhnt/",
+    "example": "A strong essay needs a coherent argument.",
+    "level": "C1"
+  },
+  {
+    "id": "vocab_014",
+    "word": "derive",
+    "translation": "to come from a source",
+    "transcription": "/di-RYV/",
+    "example": "Many English words derive from Latin.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_015",
+    "word": "distinct",
+    "translation": "clearly different",
+    "transcription": "/dis-TINGKT/",
+    "example": "The two theories have distinct explanations.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_016",
+    "word": "emerge",
+    "translation": "to appear or become known",
+    "transcription": "/i-MURJ/",
+    "example": "New problems may emerge during the research process.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_017",
+    "word": "emphasize",
+    "translation": "to give special importance to",
+    "transcription": "/EM-fuh-syz/",
+    "example": "TOEFL teachers emphasize clear organization in writing.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_018",
+    "word": "evidence",
+    "translation": "facts that support an idea",
+    "transcription": "/EV-uh-duhns/",
+    "example": "The author presents evidence to support the claim.",
+    "level": "B1"
+  },
+  {
+    "id": "vocab_019",
+    "word": "imply",
+    "translation": "to suggest without saying directly",
+    "transcription": "/im-PLY/",
+    "example": "The passage implies that the policy was unpopular.",
+    "level": "B2"
+  },
+  {
+    "id": "vocab_020",
+    "word": "significant",
+    "translation": "important or meaningful",
+    "transcription": "/sig-NIF-uh-kuhnt/",
+    "example": "The discovery had a significant impact on medicine.",
+    "level": "B1"
+  }
+]
