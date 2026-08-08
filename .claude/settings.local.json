@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(.venv/Scripts/python *)",
+      "Bash(sqlite3 *)",
+      "Bash(pip install *)",
+      "Bash(Start-Sleep *)"
+    ]
+  }
+}

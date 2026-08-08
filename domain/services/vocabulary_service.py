@@ -11,7 +11,7 @@ class VocabularyService:
         randomizer: random.Random | None = None,
     ) -> None:
         self._words = tuple(words)
-        self._randomizer = randomizer or random.Random()
+        self._randomizer = randomizer or random
 
     def get_random_word(self, *, level: str | None = None) -> VocabularyWord:
         words = self._filter_words(level=level)
