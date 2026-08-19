@@ -14,7 +14,7 @@ class VocabularyQuizService:
         randomizer: random.Random | None = None,
     ) -> None:
         self._vocabulary_service = vocabulary_service
-        self._randomizer = randomizer or random.Random()
+        self._randomizer = randomizer or random
 
     def generate_quiz(self, question_count: int = 5) -> list[VocabularyQuizQuestion]:
         if question_count <= 0:

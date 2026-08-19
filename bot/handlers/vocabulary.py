@@ -6,6 +6,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
+from application.use_cases.check_achievements import CheckAchievementsUseCase
+from application.use_cases.get_user_statistics import GetUserStatisticsUseCase
 from application.use_cases.start_vocabulary_mini_test import (
     DEFAULT_MINI_TEST_QUESTION_COUNT,
     StartVocabularyMiniTestUseCase,
@@ -13,6 +15,7 @@ from application.use_cases.start_vocabulary_mini_test import (
 from application.use_cases.submit_vocabulary_answer import (
     SubmitVocabularyAnswerUseCase,
 )
+from application.use_cases.update_streak import UpdateStreakUseCase
 from bot.callbacks.vocabulary import VocabularyCallback
 from bot.keyboards.main_menu import build_main_menu_keyboard
 from bot.keyboards.vocabulary import (
@@ -23,9 +26,10 @@ from bot.keyboards.vocabulary import (
 from bot.states.vocabulary import VocabularyMiniTestStates
 from domain.entities.vocabulary_quiz_question import VocabularyQuizQuestion
 from domain.entities.vocabulary_word import VocabularyWord
+from domain.services.achievement_service import AchievementService
 from domain.services.vocabulary_service import VocabularyService
 from infrastructure.content.json_content_loader import JsonContentLoader
-from infrastructure.database.repositories import AttemptRepository, UserRepository
+from infrastructure.database.repositories import AttemptRepository, UserRepository, VocabularyProgressRepository, AchievementRepository
 
 
 router = Router(name="vocabulary")
@@ -33,7 +37,8 @@ router = Router(name="vocabulary")
 
 @router.message(Command("vocabulary"))
 @router.message(F.text == "📚 Vocabulary")
-async def show_vocabulary_word(message: Message) -> None:
+async def show_vocabulary_word(message: Message, state: FSMContext) -> None:
+    await state.clear()
     word = await _get_random_vocabulary_word()
     await message.answer(
         text=_format_vocabulary_card(word),
@@ -43,15 +48,33 @@ async def show_vocabulary_word(message: Message) -> None:
 
 @router.callback_query(VocabularyCallback.filter(F.action == "next"))
 async def show_next_vocabulary_word(callback: CallbackQuery) -> None:
-    word = await _get_random_vocabulary_word()
+    import logging
+    
+    logger = logging.getLogger(__name__)
+    
+    try:
+        await callback.answer()
+    except Exception:
+        pass
+        
+    try:
+        exclude_word = None
+        if callback.message is not None and callback.message.text:
+            lines = [line.strip() for line in callback.message.text.split("\n") if line.strip()]
+            for line in lines:
+                if "Vocabulary Word" not in line:
+                    exclude_word = line.split()[0]
+                    break
+                    
+        word = await _get_random_vocabulary_word(exclude=exclude_word)
 
-    if callback.message is not None:
-        await callback.message.edit_text(
-            text=_format_vocabulary_card(word),
-            reply_markup=build_vocabulary_keyboard(),
-        )
-
-    await callback.answer()
+        if callback.message is not None:
+            await callback.message.edit_text(
+                text=_format_vocabulary_card(word),
+                reply_markup=build_vocabulary_keyboard(),
+            )
+    except Exception as e:
+        logger.exception("Error showing next vocabulary word")
 
 
 @router.callback_query(VocabularyCallback.filter(F.action == "mini_test"))
@@ -160,6 +183,7 @@ async def submit_vocabulary_mini_test_answer(
         submit_answer = SubmitVocabularyAnswerUseCase(
             AttemptRepository(session),
             UserRepository(session),
+            VocabularyProgressRepository(session),
         )
         await submit_answer.execute(
             user_id=user_id,
@@ -173,9 +197,53 @@ async def submit_vocabulary_mini_test_answer(
     await callback.answer(text=feedback, show_alert=True)
 
     if is_last_question:
+        # Update streak and check for newly unlocked achievements
+        newly_unlocked = []
+        streak_increased = False
+        new_streak = 0
+
+        async with session_factory() as session:
+            # Update user's streak
+            update_streak = UpdateStreakUseCase(UserRepository(session))
+            new_streak, streak_increased = await update_streak.execute(user_id=user_id)
+
+            get_statistics = GetUserStatisticsUseCase(
+                UserRepository(session),
+                AttemptRepository(session),
+            )
+            statistics = await get_statistics.execute(telegram_user.id)
+
+            achievements = await JsonContentLoader().load_achievements()
+            achievement_service = AchievementService(achievements)
+            check_achievements = CheckAchievementsUseCase(
+                achievement_service,
+                AchievementRepository(session),
+            )
+
+            newly_unlocked = await check_achievements.execute(
+                user_id=user_id,
+                statistics=statistics,
+                test_completed=True,
+                test_score=score,
+                test_total=total_questions,
+                test_type="vocabulary_mini_test",
+            )
+            await session.commit()
+
         await state.set_state(VocabularyMiniTestStates.quiz_finished)
+        result_text = _format_quiz_results(score, total_questions)
+
+        # Add streak notification
+        if streak_increased:
+            result_text += f"\n\n🔥 <b>Streak increased!</b> {new_streak} days in a row!"
+        else:
+            result_text += f"\n\n🔥 Your current streak: {new_streak} days"
+
+        if newly_unlocked:
+            result_text += "\n\n" + _format_achievements_unlocked(newly_unlocked)
+
         await callback.message.edit_text(
-            text=_format_quiz_results(score, total_questions),
+            text=result_text,
             reply_markup=build_quiz_finished_keyboard(),
         )
         return
@@ -199,6 +267,10 @@ async def back_to_vocabulary(
     callback: CallbackQuery,
     state: FSMContext,
 ) -> None:
+    try:
+        await callback.answer()
+    except Exception:
+        pass
     await state.clear()
 
     if callback.message is not None:
@@ -208,14 +280,16 @@ async def back_to_vocabulary(
             reply_markup=build_vocabulary_keyboard(),
         )
 
-    await callback.answer()
-
 
 @router.callback_query(VocabularyCallback.filter(F.action == "back"))
 async def back_to_main_menu(
     callback: CallbackQuery,
     state: FSMContext,
 ) -> None:
+    try:
+        await callback.answer()
+    except Exception:
+        pass
     await state.clear()
 
     if callback.message is not None:
@@ -225,11 +299,11 @@ async def back_to_main_menu(
         )
         await callback.message.delete()
 
-    await callback.answer()
 
-
-async def _get_random_vocabulary_word() -> VocabularyWord:
+async def _get_random_vocabulary_word(exclude: str | None = None) -> VocabularyWord:
     words = await JsonContentLoader().load_vocabulary()
+    if exclude:
+        words = [w for w in words if w.word.lower() != exclude.lower()]
     vocabulary_service = VocabularyService(words)
     return vocabulary_service.get_random_word()
 
@@ -272,4 +346,22 @@ def _format_quiz_results(score: int, total_questions: int) -> str:
         "📝 <b>Mini Test Complete</b>\n\n"
         f"Your score: <b>{score}/{total_questions}</b> ({percentage}%)\n\n"
         "Keep practicing to improve your TOEFL vocabulary."
+    )
+
+
+def _format_achievements_unlocked(achievements: list) -> str:
+    """Format newly unlocked achievements for display."""
+    if not achievements:
+        return ""
+
+    achievement_lines = []
+    for achievement in achievements:
+        achievement_lines.append(
+            f"{achievement.emoji} <b>{achievement.title}</b>\n"
+            f"   {achievement.description}"
+        )
+
+    return (
+        "🎉 <b>New Achievements Unlocked!</b>\n\n"
+        + "\n\n".join(achievement_lines)
     )

@@ -1,0 +1,1007 @@
+[
+  {
+    "id": "passage_001",
+    "title": "The Hydrologic Cycle",
+    "text": "The hydrologic cycle, or water cycle, describes the continuous movement of water on, above, and below the surface of the Earth. Driven primarily by solar energy, water evaporates from oceans and land surfaces, transpires from plants, and enters the atmosphere as water vapor. As air rises and cools, this vapor condenses into clouds and eventually returns to the surface as precipitation. Once on the ground, water may run off into rivers and lakes, infiltrate the soil to replenish groundwater aquifers, or evaporate once again, completing the loop. Groundwater movement is exceptionally slow compared to surface water, often taking centuries to travel back to the ocean. Human activities, such as urbanization and deforestation, significantly alter this cycle by increasing surface runoff and decreasing groundwater recharge.",
+    "questions": [
+      {
+        "id": "passage_001_q1",
+        "question": "What is the primary driving force behind the hydrologic cycle?",
+        "options": [
+          "Gravity",
+          "Solar energy",
+          "Wind currents",
+          "Geothermal heat"
+        ],
+        "correct_index": 1,
+        "explanation": "Solar energy heats water surfaces, causing evaporation and driving the movement of water vapor into the atmosphere."
+      },
+      {
+        "id": "passage_001_q2",
+        "question": "Which of the following describes water vapor turning back into liquid form?",
+        "options": [
+          "Evaporation",
+          "Transpiration",
+          "Infiltration",
+          "Condensation"
+        ],
+        "correct_index": 3,
+        "explanation": "Condensation is the process where water vapor cools and converts back into liquid water droplets, forming clouds."
+      },
+      {
+        "id": "passage_001_q3",
+        "question": "According to the passage, how does groundwater movement compare to surface water movement?",
+        "options": [
+          "Groundwater moves much more slowly.",
+          "Groundwater moves at approximately the same speed.",
+          "Surface water moves more slowly.",
+          "Groundwater movement is completely static."
+        ],
+        "correct_index": 0,
+        "explanation": "The passage states that groundwater movement is exceptionally slow compared to surface water, often taking centuries."
+      },
+      {
+        "id": "passage_001_q4",
+        "question": "Which human activity is mentioned as reducing groundwater recharge?",
+        "options": [
+          "Crop irrigation",
+          "Dam construction",
+          "Urbanization and deforestation",
+          "Water desalination"
+        ],
+        "correct_index": 2,
+        "explanation": "Urbanization and deforestation increase surface runoff and consequently decrease groundwater infiltration/recharge."
+      },
+      {
+        "id": "passage_001_q5",
+        "question": "What happens immediately after air rises and cools in the cycle?",
+        "options": [
+          "Water infiltrates the soil.",
+          "Water vapor condenses into clouds.",
+          "Water evaporates from oceans.",
+          "Surface runoff enters rivers."
+        ],
+        "correct_index": 1,
+        "explanation": "As stated in the passage, when air rises and cools, water vapor condenses into clouds."
+      }
+    ]
+  },
+  {
+    "id": "passage_002",
+    "title": "Photosynthesis and Cellular Respiration",
+    "text": "Photosynthesis and cellular respiration are complementary biological processes that sustain life on Earth. During photosynthesis, autotrophic organisms, such as plants and algae, capture light energy and use it to synthesize glucose from carbon dioxide and water, releasing oxygen as a byproduct. This chemical energy is stored in the bonds of organic molecules. In contrast, cellular respiration is the process by which both autotrophs and heterotrophs break down glucose in the presence of oxygen to release usable chemical energy (ATP), producing carbon dioxide and water as waste products. Thus, the reactants of one process are the products of the other. Mitochondria are the sites of aerobic respiration in eukaryotic cells, while chloroplasts facilitate photosynthesis, creating a continuous carbon-oxygen cycle.",
+    "questions": [
+      {
+        "id": "passage_002_q1",
+        "question": "Which of the following are the primary products of photosynthesis?",
+        "options": [
+          "Carbon dioxide and water",
+          "Glucose and oxygen",
+          "ATP and carbon dioxide",
+          "Water and ATP"
+        ],
+        "correct_index": 1,
+        "explanation": "Photosynthesis synthesizes glucose and releases oxygen as a byproduct."
+      },
+      {
+        "id": "passage_002_q2",
+        "question": "What is the primary purpose of cellular respiration?",
+        "options": [
+          "To capture light energy",
+          "To generate carbon dioxide",
+          "To release usable energy (ATP) from glucose",
+          "To split water molecules"
+        ],
+        "correct_index": 2,
+        "explanation": "Cellular respiration breaks down glucose to release usable energy in the form of ATP."
+      },
+      {
+        "id": "passage_002_q3",
+        "question": "Where does aerobic respiration take place in eukaryotic cells?",
+        "options": [
+          "Chloroplasts",
+          "Mitochondria",
+          "Ribosomes",
+          "Cell wall"
+        ],
+        "correct_index": 1,
+        "explanation": "The passage states that mitochondria are the sites of aerobic respiration in eukaryotic cells."
+      },
+      {
+        "id": "passage_002_q4",
+        "question": "Why are photosynthesis and cellular respiration described as complementary?",
+        "options": [
+          "They occur at the exact same speed.",
+          "The products of one process are the reactants of the other.",
+          "They both require solar light to function.",
+          "They occur inside the same organelle."
+        ],
+        "correct_index": 1,
+        "explanation": "The products of photosynthesis (glucose and oxygen) are the reactants of cellular respiration, and vice-versa."
+      },
+      {
+        "id": "passage_002_q5",
+        "question": "What type of organisms undergo cellular respiration?",
+        "options": [
+          "Only heterotrophs",
+          "Only autotrophs",
+          "Both autotrophs and heterotrophs",
+          "Only plants and algae"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage specifies that cellular respiration is the process by which both autotrophs and heterotrophs break down glucose."
+      }
+    ]
+  },
+  {
+    "id": "passage_003",
+    "title": "Glacial Retreat and Climate Change",
+    "text": "Glacial retreat serves as one of the most visible indicators of global climate change. Glaciers form in areas where the accumulation of snow exceeds its ablation (melting and sublimation) over many years. As global temperatures rise due to greenhouse gas emissions, ablation rates have significantly outpaced accumulation rates, causing glaciers worldwide to shrink and recede. This widespread melting contributes directly to rising sea levels, threatening coastal communities. Furthermore, glaciers act as natural freshwater reservoirs, slowly releasing water during dry seasons to feed major river systems. The loss of these glaciers threatens water security for millions of people who depend on them for drinking water, agriculture, and hydroelectric power generation.",
+    "questions": [
+      {
+        "id": "passage_003_q1",
+        "question": "Under what condition does a glacier naturally form?",
+        "options": [
+          "When ablation exceeds accumulation",
+          "When wind speeds remain high",
+          "When snow accumulation exceeds melting over years",
+          "When temperatures stay above freezing"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage states that glaciers form where snow accumulation exceeds ablation (melting and sublimation)."
+      },
+      {
+        "id": "passage_003_q2",
+        "question": "What is the term used in the passage for glacial melting and sublimation?",
+        "options": [
+          "Accumulation",
+          "Ablation",
+          "Infiltration",
+          "Precipitation"
+        ],
+        "correct_index": 1,
+        "explanation": "The passage explicitly defines ablation as melting and sublimation."
+      },
+      {
+        "id": "passage_003_q3",
+        "question": "What is a major threat of glacial melting mentioned in the text?",
+        "options": [
+          "Decreased solar radiation",
+          "Rising sea levels",
+          "Increased volcanic activity",
+          "Rapid forest growth"
+        ],
+        "correct_index": 1,
+        "explanation": "The text states that widespread glacial melting contributes directly to rising sea levels, threatening coastal areas."
+      },
+      {
+        "id": "passage_003_q4",
+        "question": "How do glaciers function as natural reservoirs?",
+        "options": [
+          "They store salt water for marine life.",
+          "They absorb carbon dioxide from air.",
+          "They release freshwater slowly during dry seasons.",
+          "They prevent earthquakes near mountains."
+        ],
+        "correct_index": 2,
+        "explanation": "Glaciers act as freshwater reservoirs, slowly releasing water during dry seasons to feed major river systems."
+      },
+      {
+        "id": "passage_003_q5",
+        "question": "What is identified as the root cause of the current glacial retreat?",
+        "options": [
+          "Changes in Earth's orbit",
+          "Volcanic eruptions",
+          "Rising global temperatures from greenhouse gases",
+          "Increased precipitation"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage mentions that rising global temperatures due to greenhouse gas emissions cause ablation to outpace accumulation, resulting in retreat."
+      }
+    ]
+  },
+  {
+    "id": "passage_004",
+    "title": "The Silk Road and Ancient Trade",
+    "text": "The Silk Road was not a single highway, but a vast network of ancient trade routes connecting China and the Far East with countries in Europe and the Mediterranean. Established during the Han Dynasty around 130 BCE, it facilitated the exchange of goods, ideas, and cultures across thousands of miles. While silk was the primary commodity exported from China, other items such as spices, glassware, and paper were also traded. Crucially, the Silk Road served as a pathway for cultural diffusion, leading to the spread of religions like Buddhism and Islam, as well as technologies such as papermaking and gunpowder. Maritime trade routes eventually surpassed the overland routes in efficiency, leading to the gradual decline of the Silk Road by the 15th century.",
+    "questions": [
+      {
+        "id": "passage_004_q1",
+        "question": "When was the Silk Road trade network established?",
+        "options": [
+          "During the Han Dynasty around 130 BCE",
+          "In the Middle Ages",
+          "During the Ming Dynasty around 1400 CE",
+          "In the 15th century"
+        ],
+        "correct_index": 0,
+        "explanation": "The text states that the Silk Road was established during the Han Dynasty around 130 BCE."
+      },
+      {
+        "id": "passage_004_q2",
+        "question": "Which of the following is described as the primary commodity exported from China?",
+        "options": [
+          "Glassware",
+          "Spices",
+          "Silk",
+          "Paper"
+        ],
+        "correct_index": 2,
+        "explanation": "The text notes that silk was the primary commodity exported from China."
+      },
+      {
+        "id": "passage_004_q3",
+        "question": "The Silk Road is highlighted as a major pathway for which sociological concept?",
+        "options": [
+          "Social stratification",
+          "Cultural diffusion",
+          "Urbanization",
+          "Secularization"
+        ],
+        "correct_index": 1,
+        "explanation": "The Silk Road served as a pathway for cultural diffusion, spreading religions, ideas, and technologies."
+      },
+      {
+        "id": "passage_004_q4",
+        "question": "Which technologies were spread via the Silk Road trade network?",
+        "options": [
+          "Desalination and farming",
+          "Papermaking and gunpowder",
+          "Steam engines and ironworking",
+          "Compass and electricity"
+        ],
+        "correct_index": 1,
+        "explanation": "The passage explicitly names papermaking and gunpowder as technologies spread via the Silk Road."
+      },
+      {
+        "id": "passage_004_q5",
+        "question": "What factor led to the gradual decline of the overland Silk Road?",
+        "options": [
+          "Frequent bandit raids along routes",
+          "Global cooling that blocked passages",
+          "Maritime trade routes surpassing overland routes in efficiency",
+          "A shortage of silk production"
+        ],
+        "correct_index": 2,
+        "explanation": "The text states that maritime routes surpassed overland routes in efficiency, leading to the Silk Road's decline by the 15th century."
+      }
+    ]
+  },
+  {
+    "id": "passage_005",
+    "title": "The Birth of the Internet",
+    "text": "The foundation of the modern internet was laid in the late 1960s with ARPANET, a project funded by the United States Department of Defense's Advanced Research Projects Agency (ARPA). The goal was to build a robust, decentralized communication network that could survive partial destruction, such as in a military conflict. ARPANET pioneered packet switching, a method of grouping data into packets before transmitting it over a network. This was a radical departure from traditional circuit-switched telephone networks. In the 1980s, the development of the TCP/IP protocols standard allowed different computer networks to interconnect, forming a network of networks—the internet. Finally, in 1989, Tim Berners-Lee invented the World Wide Web, introducing HTML and web browsers, which transformed the internet from an academic tool into a global public medium.",
+    "questions": [
+      {
+        "id": "passage_005_q1",
+        "question": "Which project laid the foundation of the modern internet in the late 1960s?",
+        "options": [
+          "TCP/IP protocol suite",
+          "The World Wide Web",
+          "ARPANET",
+          "HTML browser project"
+        ],
+        "correct_index": 2,
+        "explanation": "The text states that the internet foundation was laid in the late 1960s with ARPANET."
+      },
+      {
+        "id": "passage_005_q2",
+        "question": "What was the primary initial goal of the ARPANET project?",
+        "options": [
+          "To commercialize computer software",
+          "To build a robust, decentralized communication network",
+          "To host public webpages",
+          "To replace telephone companies"
+        ],
+        "correct_index": 1,
+        "explanation": "ARPANET was designed to build a robust, decentralized network that could survive partial destruction."
+      },
+      {
+        "id": "passage_005_q3",
+        "question": "Which data transmission method did ARPANET pioneer?",
+        "options": [
+          "Circuit switching",
+          "Packet switching",
+          "Analog broadcasting",
+          "Fiber transmission"
+        ],
+        "correct_index": 1,
+        "explanation": "The passage notes that ARPANET pioneered packet switching, grouping data into packets before transmission."
+      },
+      {
+        "id": "passage_005_q4",
+        "question": "What development in the 1980s allowed different computer networks to interconnect?",
+        "options": [
+          "HTML markup standards",
+          "World Wide Web servers",
+          "TCP/IP protocols",
+          "Personal computers"
+        ],
+        "correct_index": 2,
+        "explanation": "The development of TCP/IP protocols in the 1980s allowed different computer networks to interconnect."
+      },
+      {
+        "id": "passage_005_q5",
+        "question": "Who invented the World Wide Web, transforming the internet into a global medium?",
+        "options": [
+          "Tim Berners-Lee",
+          "Alan Turing",
+          "Vint Cerf",
+          "The Department of Defense"
+        ],
+        "correct_index": 0,
+        "explanation": "The passage states that Tim Berners-Lee invented the World Wide Web in 1989."
+      }
+    ]
+  },
+  {
+    "id": "passage_006",
+    "title": "Plate Tectonics and Continental Drift",
+    "text": "The theory of plate tectonics describes the large-scale motion of Earth's lithosphere, which is broken into several rigid tectonic plates. In the early 20th century, Alfred Wegener proposed the concept of continental drift, suggesting that all landmasses were once united in a supercontinent named Pangaea before drifting apart. Although initially rejected due to the lack of a known driving mechanism, Wegener's ideas were vindicated in the 1960s with the discovery of seafloor spreading at mid-ocean ridges. Today, we understand that plates move slowly on the semi-fluid asthenosphere beneath them, driven by mantle convection currents. The boundaries where these plates meet are sites of intense geologic activity. At divergent boundaries, plates move apart, creating new crust. At convergent boundaries, one plate subducts beneath another, forming mountains and deep trenches. At transform boundaries, plates slide horizontally past each other, triggering earthquakes.",
+    "questions": [
+      {
+        "id": "passage_006_q1",
+        "question": "Who originally proposed the concept of continental drift?",
+        "options": [
+          "Charles Darwin",
+          "Alfred Wegener",
+          "Tim Berners-Lee",
+          "Harry Hess"
+        ],
+        "correct_index": 1,
+        "explanation": "Alfred Wegener proposed continental drift in the early 20th century, suggesting that the continents were once united as Pangaea."
+      },
+      {
+        "id": "passage_006_q2",
+        "question": "What discovery in the 1960s provided the mechanism that supported Wegener's theory?",
+        "options": [
+          "Hydrothermal vents",
+          "Mountain range subduction",
+          "Seafloor spreading at mid-ocean ridges",
+          "Atmospheric convection"
+        ],
+        "correct_index": 2,
+        "explanation": "The discovery of seafloor spreading at mid-ocean ridges provided the physical mechanism that vindicated continental drift."
+      },
+      {
+        "id": "passage_006_q3",
+        "question": "On which layer of the Earth do tectonic plates slowly float and move?",
+        "options": [
+          "The inner core",
+          "The continental crust",
+          "The rigid lithosphere",
+          "The semi-fluid asthenosphere"
+        ],
+        "correct_index": 3,
+        "explanation": "The passage states that tectonic plates float and move on the semi-fluid asthenosphere."
+      },
+      {
+        "id": "passage_006_q4",
+        "question": "What geologic feature is formed when plates move apart at divergent boundaries?",
+        "options": [
+          "New crust",
+          "Deep ocean trenches",
+          "High mountain ranges",
+          "Transform faults"
+        ],
+        "correct_index": 0,
+        "explanation": "The text explains that at divergent boundaries, plates move apart and create new crust."
+      },
+      {
+        "id": "passage_006_q5",
+        "question": "Where does plate subduction occur, forming mountains and trenches?",
+        "options": [
+          "At transform boundaries",
+          "At convergent boundaries",
+          "At divergent boundaries",
+          "At hot spots"
+        ],
+        "correct_index": 1,
+        "explanation": "At convergent boundaries, one plate subducts beneath another, forming mountains and deep ocean trenches."
+      }
+    ]
+  },
+  {
+    "id": "passage_007",
+    "title": "The Tragedy of the Commons",
+    "text": "The Tragedy of the Commons is an economic theory first popularized by Garrett Hardin in 1968. It describes a situation where individual users, acting independently according to their own self-interest, behave contrary to the common good of all users by depleting or spoiling a shared resource. Shared resources, such as public pastures, ocean fisheries, and the Earth's atmosphere, are prone to overexploitation because the benefits of consumption go to individuals, while the costs of depletion are shared by the entire community. For instance, a herdsman receives all the profits from adding an extra cow to a public pasture, but the damage from overgrazing is distributed among all herdsmen. Without regulation or property rights, individuals have no economic incentive to conserve the resource. To prevent this tragedy, societies must implement regulations, quotas, taxes, or privatization to govern public commons.",
+    "questions": [
+      {
+        "id": "passage_007_q1",
+        "question": "What is the core dilemma described in the Tragedy of the Commons?",
+        "options": [
+          "Government control ruins private businesses.",
+          "Self-interested individuals overexploit shared resources.",
+          "Taxes prevent farmers from buying livestock.",
+          "Privatization leads to higher food prices."
+        ],
+        "correct_index": 1,
+        "explanation": "The theory describes how individuals acting in self-interest deplete or spoil a shared resource to the detriment of all."
+      },
+      {
+        "id": "passage_007_q2",
+        "question": "Why are shared resources particularly vulnerable to overexploitation?",
+        "options": [
+          "They are located in remote areas.",
+          "They receive no sunlight or rain.",
+          "Individuals gain all the benefits, while costs are shared.",
+          "Governments forbid anyone from using them."
+        ],
+        "correct_index": 2,
+        "explanation": "The benefits of consumption go directly to the individual, while the costs of depletion are distributed among the entire community."
+      },
+      {
+        "id": "passage_007_q3",
+        "question": "According to the passage, who popularized the concept in 1968?",
+        "options": [
+          "Alfred Wegener",
+          "Marie Curie",
+          "Tim Berners-Lee",
+          "Garrett Hardin"
+        ],
+        "correct_index": 3,
+        "explanation": "The Tragedy of the Commons was popularized by Garrett Hardin in 1968."
+      },
+      {
+        "id": "passage_007_q4",
+        "question": "Which of the following is an example of a 'commons' mentioned in the text?",
+        "options": [
+          "A private backyard",
+          "A corporate office building",
+          "The Earth's atmosphere",
+          "A personal bank account"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage lists public pastures, ocean fisheries, and the Earth's atmosphere as examples of shared resources."
+      },
+      {
+        "id": "passage_007_q5",
+        "question": "What solution does the passage suggest to prevent the tragedy of public resources?",
+        "options": [
+          "Encouraging unlimited competition",
+          "Regulations, quotas, taxes, or privatization",
+          "Abolishing property rights entirely",
+          "Relying solely on voluntary cooperation"
+        ],
+        "correct_index": 1,
+        "explanation": "To prevent the depletion of the commons, societies must use regulations, quotas, taxes, or privatization."
+      }
+    ]
+  },
+  {
+    "id": "passage_008",
+    "title": "Hydrothermal Vents and Chemosynthesis",
+    "text": "In 1977, oceanographers discovered hydrothermal vents on the ocean floor near volcanic boundaries. These deep-sea geysers spew superheated, mineral-rich water into the freezing ocean depths. Surprisingly, these areas are not barren; they host incredibly dense and diverse ecosystems of crabs, shrimp, clams, and massive tube worms. In the absolute darkness of the deep ocean, photosynthesis is impossible. Instead, these ecosystems rely on chemosynthesis, a process in which specialized bacteria synthesize organic energy by oxidizing toxic hydrogen sulfide dissolved in the vent water. These bacteria form the base of the food web, acting as primary producers. Some organisms, like tube worms, have evolved a symbiotic relationship with these bacteria, hosting them inside their bodies to receive direct nutrition. This discovery proved that complex ecosystems can thrive completely independent of solar energy, expanding our understanding of the conditions required for life to exist on Earth and other planets.",
+    "questions": [
+      {
+        "id": "passage_008_q1",
+        "question": "What biological process supports life near deep-sea hydrothermal vents?",
+        "options": [
+          "Photosynthesis",
+          "Respiration",
+          "Chemosynthesis",
+          "Osmosis"
+        ],
+        "correct_index": 2,
+        "explanation": "In the dark deep ocean, ecosystems around vents rely on chemosynthesis instead of photosynthesis."
+      },
+      {
+        "id": "passage_008_q2",
+        "question": "What toxic chemical do vent bacteria oxidize to generate energy?",
+        "options": [
+          "Carbon dioxide",
+          "Hydrogen sulfide",
+          "Calcium carbonate",
+          "Chlorophyll"
+        ],
+        "correct_index": 1,
+        "explanation": "Specialized bacteria synthesize organic energy by oxidizing toxic hydrogen sulfide dissolved in the geyser water."
+      },
+      {
+        "id": "passage_008_q3",
+        "question": "Which organisms have a symbiotic relationship with chemosynthetic bacteria?",
+        "options": [
+          "Deciduous trees",
+          "Whales",
+          "Tube worms",
+          "Phytoplankton"
+        ],
+        "correct_index": 2,
+        "explanation": "The text states that tube worms have a symbiotic relationship with these bacteria, hosting them to receive direct nutrition."
+      },
+      {
+        "id": "passage_008_q4",
+        "question": "Why was the discovery of hydrothermal vents significant for biology?",
+        "options": [
+          "It proved that the ocean floor has no earthquakes.",
+          "It demonstrated that complex life can thrive independent of solar energy.",
+          "It showed that deep-sea water is always fresh.",
+          "It confirmed that plants grow faster in the dark."
+        ],
+        "correct_index": 1,
+        "explanation": "It proved that complex ecosystems can thrive completely independent of solar energy, expanding our understanding of life's boundaries."
+      },
+      {
+        "id": "passage_008_q5",
+        "question": "What is the role of the chemosynthetic bacteria in the hydrothermal vent food web?",
+        "options": [
+          "Decomposers",
+          "Secondary consumers",
+          "Primary producers",
+          "Apex predators"
+        ],
+        "correct_index": 2,
+        "explanation": "The bacteria act as primary producers, forming the base of the deep-sea food web."
+      }
+    ]
+  },
+  {
+    "id": "passage_009",
+    "title": "The Neolithic Revolution",
+    "text": "The Neolithic Revolution, starting around 10,000 BCE, represents one of the most critical transitions in human history. During this period, humans gradually shifted from nomadic hunter-gatherer lifestyles to sedentary agricultural communities. Rather than relying on foraging wild plants and hunting animals, societies learned to domesticate crops like wheat and barley and raise animals like sheep and goats. This agricultural transition led to food surpluses, allowing populations to grow rapidly. Because farming required people to remain in one place, permanent villages and early cities emerged. The availability of surplus food freed some individuals from agricultural labor, leading to the division of labor, technological innovations (such as pottery, metallurgy, and writing systems), and the development of social hierarchies. Thus, the Neolithic Revolution laid the foundations for modern civilization, though it also introduced new challenges, such as infectious diseases and social inequality.",
+    "questions": [
+      {
+        "id": "passage_009_q1",
+        "question": "What major transition occurred during the Neolithic Revolution?",
+        "options": [
+          "Humans migrated from Asia to Europe.",
+          "Nomadic hunter-gatherers transitioned to sedentary farming.",
+          "Industrial factories replaced agricultural farms.",
+          "Writing systems were replaced by oral histories."
+        ],
+        "correct_index": 1,
+        "explanation": "The Neolithic Revolution marked the transition from a nomadic hunter-gatherer lifestyle to sedentary agriculture."
+      },
+      {
+        "id": "passage_009_q2",
+        "question": "Which crops and animals are mentioned as early domesticates?",
+        "options": [
+          "Rice and cattle",
+          "Corn and llamas",
+          "Wheat, barley, sheep, and goats",
+          "Potatoes and pigs"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage mentions the domestication of crops like wheat and barley, and animals like sheep and goats."
+      },
+      {
+        "id": "passage_009_q3",
+        "question": "What social changes occurred as a direct result of food surpluses?",
+        "options": [
+          "Everyone became a farmer.",
+          "Human population declined rapidly.",
+          "Division of labor, technological innovations, and social hierarchies emerged.",
+          "Nomadic wandering became the dominant lifestyle."
+        ],
+        "correct_index": 2,
+        "explanation": "Surplus food allowed some individuals to work in non-farming roles, leading to the division of labor, new technologies, and social hierarchies."
+      },
+      {
+        "id": "passage_009_q4",
+        "question": "Why did permanent villages and early cities first emerge?",
+        "options": [
+          "Farming required people to stay in one place.",
+          "Wild animals became too dangerous to hunt.",
+          "Glaciers covered the major continents.",
+          "People wanted to escape industrial pollution."
+        ],
+        "correct_index": 0,
+        "explanation": "Since farming required people to remain in one location to plant and harvest crops, permanent settlements arose."
+      },
+      {
+        "id": "passage_009_q5",
+        "question": "What negative consequence of the Neolithic Revolution is mentioned in the text?",
+        "options": [
+          "A shortage of toolmaking materials",
+          "Increased volcanic activity",
+          "Infectious diseases and social inequality",
+          "The disappearance of permanent languages"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage notes that the transition to sedentary communities introduced challenges like infectious diseases and social inequality."
+      }
+    ]
+  },
+  {
+    "id": "passage_010",
+    "title": "The Roman Aqueduct System",
+    "text": "The aqueduct system of ancient Rome stands as a monumental engineering achievement of the classical world. Operating entirely on gravity, these channels carried fresh water from mountain springs and reservoirs directly into cities. The water flowed through conduits constructed of stone, brick, or concrete, descending along a precise, gradual gradient. Engineers used specialized tools, such as the chorobates, to calculate these slopes, ensuring the water flowed steadily without running too fast (which would erode the channels) or stagnating. When aqueducts encountered deep valleys, engineers built multi-tiered stone arch bridges to support the conduits, or used inverted siphons (pressurized pipes) to push water across. The abundant water supply supported massive public baths, fountains, and sewer systems, promoting public health and sanitation. By providing constant clean water, the aqueducts allowed Rome to grow into a metropolis of over a million inhabitants, showing the direct connection between infrastructure and urbanization.",
+    "questions": [
+      {
+        "id": "passage_010_q1",
+        "question": "What physical force powered the ancient Roman aqueduct system?",
+        "options": [
+          "Steam engines",
+          "Water pumps",
+          "Gravity",
+          "Pneumatic pressure"
+        ],
+        "correct_index": 2,
+        "explanation": "The passage explicitly states that the aqueduct system operated entirely on gravity."
+      },
+      {
+        "id": "passage_010_q2",
+        "question": "Why did engineers need to calculate the gradient of the channels so precisely?",
+        "options": [
+          "To allow ships to navigate the channels",
+          "To keep water flowing steadily without eroding channels or stagnating",
+          "To generate hydroelectric power for public baths",
+          "To ensure the water remained hot during travel"
+        ],
+        "correct_index": 1,
+        "explanation": "A precise gradient was necessary to prevent water from flowing too quickly (causing erosion) or too slowly (leading to stagnation)."
+      },
+      {
+        "id": "passage_010_q3",
+        "question": "What engineering solution was used to transport water across deep valleys?",
+        "options": [
+          "Multi-tiered stone arch bridges or inverted siphons",
+          "Wooden boats and canals",
+          "Electric water pumps",
+          "Deep underground vertical shafts"
+        ],
+        "correct_index": 0,
+        "explanation": "Engineers built multi-tiered stone arch bridges or used pressurized pipes called inverted siphons to cross valleys."
+      },
+      {
+        "id": "passage_010_q4",
+        "question": "How did the aqueducts impact Roman society?",
+        "options": [
+          "They caused frequent flooding in residential areas.",
+          "They isolated Rome from the rest of Italy.",
+          "They supported public health, sanitation, and urbanization.",
+          "They forced citizens to relocate to agricultural valleys."
+        ],
+        "correct_index": 2,
+        "explanation": "The abundant clean water supported baths, fountains, and sewers, which promoted public health and helped Rome grow into a metropolis."
+      },
+      {
+        "id": "passage_010_q5",
+        "question": "Which tool is mentioned as being used by Roman engineers to calculate gradients?",
+        "options": [
+          "The chorobates",
+          "The magnetic compass",
+          "The telescope",
+          "The barometer"
+        ],
+        "correct_index": 0,
+        "explanation": "The text states that engineers used specialized tools like the chorobates to calculate the slopes of the aqueducts."
+      }
+    ]
+  },
+  {
+    "id": "passage_011",
+    "title": "Mars and the History of Water",
+    "text": "Martian geology provides compelling evidence that liquid water once flowed across the surface of the planet billions of years ago. Observations from orbiters and rovers have revealed dry riverbeds, winding delta networks, and minerals that only form in the presence of water, such as clays and sulfates. Early Mars likely possessed a thicker atmosphere and a magnetic field that shielded the surface from solar radiation, allowing a warmer, wetter climate. However, as Mars cooled, its internal dynamo shut down, causing the loss of its magnetic field. Solar wind subsequently stripped away the atmosphere, reducing atmospheric pressure and temperature. Today, liquid water cannot exist on the surface of Mars due to the thin atmosphere, as it would quickly freeze or sublime. Most of the planet's remaining water is locked away in polar ice caps or preserved as permafrost beneath the Martian soil. Understanding this hydrological history is central to search efforts for ancient microbial life on Mars.",
+    "questions": [
+      {
+        "id": "passage_011_q1",
+        "question": "What evidence indicates that liquid water once existed on Mars?",
+        "options": [
+          "Active rivers and oceans on the surface",
+          "Dry riverbeds, winding delta networks, and specific minerals",
+          "Large forests preserved as fossils",
+          "Volcanic eruptions releasing liquid steam"
+        ],
+        "correct_index": 1,
+        "explanation": "Geologic features like dry riverbeds and deltas, along with water-formed minerals, prove that liquid water existed on Mars in the past."
+      },
+      {
+        "id": "passage_011_q2",
+        "question": "What factor allowed early Mars to have a warmer and wetter climate?",
+        "options": [
+          "A closer orbit to the sun",
+          "A thicker atmosphere and a magnetic field",
+          "Continuous volcanic heat across the planet",
+          "A large moon that stabilized the planet's tilt"
+        ],
+        "correct_index": 1,
+        "explanation": "A thicker atmosphere and a magnetic field shielded Mars and trapped heat, allowing liquid water to exist."
+      },
+      {
+        "id": "passage_011_q3",
+        "question": "What caused Mars to lose its shielding magnetic field?",
+        "options": [
+          "A massive asteroid impact",
+          "The planet cooled, shutting down its internal dynamo",
+          "Solar wind stripped the magnetic poles",
+          "The tilt of the planet's rotation shifted"
+        ],
+        "correct_index": 1,
+        "explanation": "As the planet cooled, its internal dynamo shut down, which caused the loss of its magnetic field."
+      },
+      {
+        "id": "passage_011_q4",
+        "question": "Why can liquid water NOT exist on the Martian surface today?",
+        "options": [
+          "The surface is too hot, causing evaporation.",
+          "The thin atmosphere causes water to freeze or sublime.",
+          "Gravity is too weak to hold liquid water.",
+          "Martian soil absorbs all water instantly."
+        ],
+        "correct_index": 1,
+        "explanation": "Due to low atmospheric pressure and cold temperatures, surface water would freeze or sublime."
+      },
+      {
+        "id": "passage_011_q5",
+        "question": "Where is most of Mars' remaining water located today?",
+        "options": [
+          "In deep underground oceans of liquid water",
+          "In polar ice caps and sub-surface permafrost",
+          "Suspended as heavy clouds in the atmosphere",
+          "Flowing inside deep Martian canyons"
+        ],
+        "correct_index": 1,
+        "explanation": "Most of Mars' remaining water is frozen in the polar ice caps or stored as sub-surface permafrost."
+      }
+    ]
+  },
+  {
+    "id": "passage_012",
+    "title": "Symbiotic Relationships in Nature",
+    "text": "Symbiosis describes the close, long-term interaction between two different biological species. These relationships are classified into three primary categories based on how the partners are affected: mutualism, commensalism, and parasitism. In mutualism, both organisms benefit. A classic example is mycorrhizal fungi, which colonize plant roots; the fungi help the plant absorb water and nutrients from the soil, while receiving sugars from the plant's photosynthesis. Commensalism occurs when one species benefits, while the other is unaffected. For example, barnacles attach themselves to whales, gaining transport to nutrient-rich feeding areas without harming or helping the whale. Finally, in parasitism, one species (the parasite) benefits at the expense of the other (the host). Parasites, such as tapeworms or fleas, extract nutrients from their hosts, often weakening them or causing diseases. These diverse interactions drive evolutionary adaptations as species continuously adjust to one another.",
+    "questions": [
+      {
+        "id": "passage_012_q1",
+        "question": "Which of the following describes a symbiotic relationship where both species benefit?",
+        "options": [
+          "Commensalism",
+          "Parasitism",
+          "Mutualism",
+          "Predation"
+        ],
+        "correct_index": 2,
+        "explanation": "Mutualism is defined as a relationship where both participating organisms benefit."
+      },
+      {
+        "id": "passage_012_q2",
+        "question": "How do mycorrhizal fungi benefit the plants they colonize?",
+        "options": [
+          "They shade the plant from excess sunlight.",
+          "They help the plant absorb water and nutrients from the soil.",
+          "They synthesize glucose directly for the plant.",
+          "They protect the plant from freezing temperatures."
+        ],
+        "correct_index": 1,
+        "explanation": "The fungi help the plant absorb water and mineral nutrients from the soil."
+      },
+      {
+        "id": "passage_012_q3",
+        "question": "Which relationship describes one species benefiting while the other is completely unaffected?",
+        "options": [
+          "Mutualism",
+          "Parasitism",
+          "Commensalism",
+          "Competition"
+        ],
+        "correct_index": 2,
+        "explanation": "Commensalism benefits one organism while leaving the other partner unaffected."
+      },
+      {
+        "id": "passage_012_q4",
+        "question": "Why is the relationship between barnacles and whales classified as commensalism?",
+        "options": [
+          "Barnacles feed on the whale's skin.",
+          "Barnacles protect the whale from predators.",
+          "Barnacles gain transport to nutrients without affecting the whale.",
+          "Both organisms compete for the same food sources."
+        ],
+        "correct_index": 2,
+        "explanation": "The barnacles gain transportation to feeding areas, but their presence does not affect the whale."
+      },
+      {
+        "id": "passage_012_q5",
+        "question": "What is the primary characteristic of parasitism?",
+        "options": [
+          "Both species compete for limited territory.",
+          "One species benefits by harming another.",
+          "Neither species benefits from the interaction.",
+          "One species eats the other instantly."
+        ],
+        "correct_index": 1,
+        "explanation": "In parasitism, one species (the parasite) benefits at the expense of the other (the host)."
+      }
+    ]
+  },
+  {
+    "id": "passage_013",
+    "title": "Coral Bleaching and Ocean Acidification",
+    "text": "Marine ecosystems are facing severe threats from global climate change, particularly through coral bleaching and ocean acidification. Coral reefs are built by colonies of tiny animals called coral polyps, which live in a mutualistic relationship with microscopic algae called zooxanthellae. These algae live inside the coral tissues, providing food via photosynthesis and giving reefs their vibrant colors. However, when water temperatures rise even slightly, corals become stressed and expel the zooxanthellae. This process, known as coral bleaching, leaves the coral stark white and vulnerable. Without the algae, corals lose their primary source of nutrition and will die if temperatures do not lower. Simultaneously, the oceans absorb excess carbon dioxide from the atmosphere. This CO2 reacts with seawater to form carbonic acid, leading to ocean acidification. Acidification reduces the concentration of carbonate ions, making it extremely difficult for corals and shellfish to build their calcium carbonate skeletons, threatening the marine food web.",
+    "questions": [
+      {
+        "id": "passage_013_q1",
+        "question": "What organisms live inside coral polyps in a mutualistic relationship?",
+        "options": [
+          "Zooxanthellae algae",
+          "Mycorrhizal fungi",
+          "Tube worms",
+          "Barnacles"
+        ],
+        "correct_index": 0,
+        "explanation": "Corals share a mutualistic relationship with microscopic algae called zooxanthellae."
+      },
+      {
+        "id": "passage_013_q2",
+        "question": "What is the primary cause of coral bleaching?",
+        "options": [
+          "Oil spills in the ocean",
+          "Rising water temperatures",
+          "Increased ocean salinity",
+          "Lack of atmospheric carbon dioxide"
+        ],
+        "correct_index": 1,
+        "explanation": "Rising water temperatures stress corals, causing them to expel their symbiotic algae."
+      },
+      {
+        "id": "passage_013_q3",
+        "question": "What happens to corals when they are bleached?",
+        "options": [
+          "They grow much faster.",
+          "They turn white and lose their primary food source.",
+          "They immediately become immune to acidification.",
+          "They sink to the bottom of the ocean."
+        ],
+        "correct_index": 1,
+        "explanation": "Bleaching leaves corals white and deprives them of their main nutrient source, the algae."
+      },
+      {
+        "id": "passage_013_q4",
+        "question": "How does ocean acidification occur?",
+        "options": [
+          "Acid rain falls directly onto coral reefs.",
+          "Excess carbon dioxide reacts with seawater to form carbonic acid.",
+          "Overfishing changes the chemical balance of seawater.",
+          "Deep-sea geysers release acid into the water."
+        ],
+        "correct_index": 1,
+        "explanation": "Oceans absorb carbon dioxide from the air, which reacts with seawater to create carbonic acid, lowering the pH."
+      },
+      {
+        "id": "passage_013_q5",
+        "question": "Why is ocean acidification dangerous for corals and shellfish?",
+        "options": [
+          "It increases the temperature of the water.",
+          "It makes the ocean water too clear for photosynthesis.",
+          "It reduces carbonate ions needed to build calcium carbonate skeletons.",
+          "It prevents barnacles from attaching to whales."
+        ],
+        "correct_index": 2,
+        "explanation": "Acidification lowers the availability of carbonate ions, which corals and shellfish require to form skeletons and shells."
+      }
+    ]
+  },
+  {
+    "id": "passage_014",
+    "title": "The Discovery of Radioactivity",
+    "text": "The discovery of radioactivity in the late 19th century revolutionized our understanding of atomic structure and physics. In 1896, French physicist Henri Becquerel accidentally discovered that uranium salts emitted spontaneous radiation that could expose photographic plates, even in total darkness. Intrigued by this finding, Marie Curie and her husband Pierre Curie began investigating the phenomenon, coining the term 'radioactivity.' They discovered that the activity depended solely on the amount of uranium present, proving that radioactivity was an atomic property rather than a chemical one. Through painstaking labor, the Curies isolated two new, highly radioactive elements: polonium and radium. Marie Curie became the first woman to win a Nobel Prize and the only person to win Nobel Prizes in two different scientific fields (Physics and Chemistry). Their research opened the door to nuclear physics, leading to both medical breakthroughs (such as cancer radiotherapy) and the development of nuclear energy.",
+    "questions": [
+      {
+        "id": "passage_014_q1",
+        "question": "Who accidentally discovered radioactivity in 1896?",
+        "options": [
+          "Marie Curie",
+          "Henri Becquerel",
+          "Alfred Wegener",
+          "Garrett Hardin"
+        ],
+        "correct_index": 1,
+        "explanation": "Henri Becquerel discovered radioactivity in 1896 when he observed uranium salts emitting spontaneous radiation."
+      },
+      {
+        "id": "passage_014_q2",
+        "question": "What did the Curies prove by showing that activity depended only on the amount of uranium?",
+        "options": [
+          "Radioactivity is a chemical reaction.",
+          "Radioactivity is an atomic property.",
+          "Uranium is extremely common.",
+          "Radiation is harmless."
+        ],
+        "correct_index": 1,
+        "explanation": "Because radioactivity was unaffected by chemical combinations, they proved it is a property of the atom itself."
+      },
+      {
+        "id": "passage_014_q3",
+        "question": "Which two radioactive elements were isolated by the Curies?",
+        "options": [
+          "Uranium and helium",
+          "Polonium and radium",
+          "Plutonium and carbon",
+          "Silicon and copper"
+        ],
+        "correct_index": 1,
+        "explanation": "The Curies isolated polonium and radium through their research on pitchblende."
+      },
+      {
+        "id": "passage_014_q4",
+        "question": "What is unique about Marie Curie's Nobel Prize achievements?",
+        "options": [
+          "She is the only person to win two Nobel Prizes in different fields.",
+          "She refused to accept her Nobel Prize.",
+          "She won the Nobel Prize before turning 20.",
+          "She won the Prize for inventing the X-ray machine."
+        ],
+        "correct_index": 0,
+        "explanation": "Marie Curie is the only person to win Nobel Prizes in two distinct scientific fields: Physics and Chemistry."
+      },
+      {
+        "id": "passage_014_q5",
+        "question": "What modern application of radioactivity is mentioned in the passage?",
+        "options": [
+          "High-speed broadband internet",
+          "Cancer radiotherapy",
+          "Inverted siphons in aqueducts",
+          "Deep-sea submarine transport"
+        ],
+        "correct_index": 1,
+        "explanation": "The text mentions cancer radiotherapy as a medical breakthrough resulting from the study of radioactivity."
+      }
+    ]
+  },
+  {
+    "id": "passage_015",
+    "title": "Classical Conditioning in Psychology",
+    "text": "Classical conditioning is a foundational concept in behavioral psychology, first described by Russian physiologist Ivan Pavlov. While studying the digestive systems of dogs, Pavlov noticed that the animals began to salivate not only when eating food, but also when they saw the lab assistant who brought the food. Intrigued, Pavlov designed an experiment where he repeatedly rang a bell (a neutral stimulus) immediately before presenting the dogs with meat powder (an unconditioned stimulus). Naturally, the meat powder elicited salivation (an unconditioned response). After several pairings, the dogs began to associate the sound of the bell with the arrival of food. Eventually, the sound of the bell alone caused the dogs to salivate. The bell had become a conditioned stimulus, and the salivation in response to the bell became a conditioned response. This process demonstrated how organisms learn to associate environmental events, forming the basis of behaviorist theory.",
+    "questions": [
+      {
+        "id": "passage_015_q1",
+        "question": "Who first described the concept of classical conditioning?",
+        "options": [
+          "B.F. Skinner",
+          "Ivan Pavlov",
+          "Marie Curie",
+          "Henri Becquerel"
+        ],
+        "correct_index": 1,
+        "explanation": "Ivan Pavlov first described classical conditioning through his experiments with dogs."
+      },
+      {
+        "id": "passage_015_q2",
+        "question": "In Pavlov's experiment, what was the initial neutral stimulus?",
+        "options": [
+          "The meat powder",
+          "The bell",
+          "The salivation",
+          "The lab assistant"
+        ],
+        "correct_index": 1,
+        "explanation": "The bell was the neutral stimulus because it did not naturally cause salivation before conditioning."
+      },
+      {
+        "id": "passage_015_q3",
+        "question": "What is the unconditioned response in this experiment?",
+        "options": [
+          "Salivation in response to the food",
+          "Salivation in response to the bell",
+          "The sound of the bell",
+          "The footsteps of the assistant"
+        ],
+        "correct_index": 0,
+        "explanation": "Salivating to the meat powder is an unconditioned response because it is a natural, unlearned reflex."
+      },
+      {
+        "id": "passage_015_q4",
+        "question": "How did the bell become a conditioned stimulus?",
+        "options": [
+          "By ringing it louder each time",
+          "By pairing it repeatedly with the unconditioned stimulus (food)",
+          "By presenting it only when the dogs were asleep",
+          "By feeding the dogs only when they rang the bell"
+        ],
+        "correct_index": 1,
+        "explanation": "Repeatedly pairing the bell (neutral) with the food (unconditioned stimulus) created the association."
+      },
+      {
+        "id": "passage_015_q5",
+        "question": "What did Pavlov's experiment demonstrate?",
+        "options": [
+          "Dogs have a highly complex language.",
+          "Organisms learn to associate events in their environment.",
+          "Digestion is controlled by the outer ear.",
+          "Animals cannot remember sounds for long."
+        ],
+        "correct_index": 1,
+        "explanation": "The experiment proved that organisms can learn to associate two separate environmental stimuli."
+      }
+    ]
+  }
+]

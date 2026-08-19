@@ -1,5 +1,6 @@
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
@@ -13,6 +14,13 @@ from infrastructure.database.models import Base
 
 def create_database_engine(database_url: str, *, echo: bool = False) -> AsyncEngine:
     """Create the async SQLAlchemy engine."""
+    if "sqlite" in database_url:
+        # Extract database path from URL and ensure parent directory exists
+        clean_path = database_url.split(":///", 1)[-1]
+        if clean_path and not clean_path.startswith(":memory:"):
+            db_dir = Path(clean_path).parent
+            if db_dir and not db_dir.exists():
+                db_dir.mkdir(parents=True, exist_ok=True)
 
     return create_async_engine(
         database_url,
@@ -20,6 +28,7 @@ def create_database_engine(database_url: str, *, echo: bool = False) -> AsyncEng
         future=True,
         pool_pre_ping=True,
     )
+
 
 
 def create_session_factory(

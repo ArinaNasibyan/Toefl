@@ -14,6 +14,7 @@ def build_main_menu_keyboard() -> ReplyKeyboardMarkup:
             ],
             [
                 KeyboardButton(text="🏆 Achievements"),
+                KeyboardButton(text="🎧 Listening"),
             ],
         ],
         resize_keyboard=True,

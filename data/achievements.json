@@ -1,0 +1,189 @@
+[
+  {
+    "id": "first_test",
+    "title": "First Steps",
+    "description": "Complete your first test",
+    "emoji": "🎯",
+    "category": "milestone",
+    "requirement": {
+      "type": "completed_tasks",
+      "value": 1
+    }
+  },
+  {
+    "id": "vocabulary_rookie",
+    "title": "Vocabulary Rookie",
+    "description": "Complete 5 vocabulary mini tests",
+    "emoji": "📚",
+    "category": "vocabulary",
+    "requirement": {
+      "type": "vocabulary_tests_completed",
+      "value": 5
+    }
+  },
+  {
+    "id": "vocabulary_expert",
+    "title": "Vocabulary Expert",
+    "description": "Complete 20 vocabulary mini tests",
+    "emoji": "📖",
+    "category": "vocabulary",
+    "requirement": {
+      "type": "vocabulary_tests_completed",
+      "value": 20
+    }
+  },
+  {
+    "id": "reading_rookie",
+    "title": "Reading Rookie",
+    "description": "Complete 5 reading tests",
+    "emoji": "📰",
+    "category": "reading",
+    "requirement": {
+      "type": "reading_tests_completed",
+      "value": 5
+    }
+  },
+  {
+    "id": "reading_expert",
+    "title": "Reading Expert",
+    "description": "Complete 20 reading tests",
+    "emoji": "📕",
+    "category": "reading",
+    "requirement": {
+      "type": "reading_tests_completed",
+      "value": 20
+    }
+  },
+  {
+    "id": "perfect_score",
+    "title": "Perfectionist",
+    "description": "Score 100% on any test",
+    "emoji": "💯",
+    "category": "skill",
+    "requirement": {
+      "type": "perfect_test",
+      "value": 1
+    }
+  },
+  {
+    "id": "perfect_score_5",
+    "title": "Flawless Master",
+    "description": "Score 100% on 5 tests",
+    "emoji": "⭐",
+    "category": "skill",
+    "requirement": {
+      "type": "perfect_test",
+      "value": 5
+    }
+  },
+  {
+    "id": "word_collector_50",
+    "title": "Word Collector",
+    "description": "Learn 50 words",
+    "emoji": "✍️",
+    "category": "vocabulary",
+    "requirement": {
+      "type": "words_learned",
+      "value": 50
+    }
+  },
+  {
+    "id": "word_master_100",
+    "title": "Word Master",
+    "description": "Learn 100 words",
+    "emoji": "🎓",
+    "category": "vocabulary",
+    "requirement": {
+      "type": "words_learned",
+      "value": 100
+    }
+  },
+  {
+    "id": "week_streak",
+    "title": "Weekly Warrior",
+    "description": "Maintain a 7-day streak",
+    "emoji": "🔥",
+    "category": "streak",
+    "requirement": {
+      "type": "streak_days",
+      "value": 7
+    }
+  },
+  {
+    "id": "month_streak",
+    "title": "Monthly Champion",
+    "description": "Maintain a 30-day streak",
+    "emoji": "🏆",
+    "category": "streak",
+    "requirement": {
+      "type": "streak_days",
+      "value": 30
+    }
+  },
+  {
+    "id": "accurate_shooter",
+    "title": "Sharp Shooter",
+    "description": "Achieve 80% accuracy overall",
+    "emoji": "🎯",
+    "category": "skill",
+    "requirement": {
+      "type": "accuracy_percentage",
+      "value": 80
+    }
+  },
+  {
+    "id": "sniper",
+    "title": "Sniper",
+    "description": "Achieve 90% accuracy overall",
+    "emoji": "🎖️",
+    "category": "skill",
+    "requirement": {
+      "type": "accuracy_percentage",
+      "value": 90
+    }
+  },
+  {
+    "id": "correct_100",
+    "title": "Century Club",
+    "description": "Answer 100 questions correctly",
+    "emoji": "💪",
+    "category": "milestone",
+    "requirement": {
+      "type": "correct_answers",
+      "value": 100
+    }
+  },
+  {
+    "id": "correct_500",
+    "title": "Elite Learner",
+    "description": "Answer 500 questions correctly",
+    "emoji": "👑",
+    "category": "milestone",
+    "requirement": {
+      "type": "correct_answers",
+      "value": 500
+    }
+  },
+  {
+    "id": "listening_rookie",
+    "title": "Listening Rookie",
+    "description": "Complete 5 listening tests",
+    "emoji": "🎧",
+    "category": "listening",
+    "requirement": {
+      "type": "listening_tests_completed",
+      "value": 5
+    }
+  },
+  {
+    "id": "listening_expert",
+    "title": "Listening Expert",
+    "description": "Complete 20 listening tests",
+    "emoji": "📻",
+    "category": "listening",
+    "requirement": {
+      "type": "listening_tests_completed",
+      "value": 20
+    }
+  }
+]
