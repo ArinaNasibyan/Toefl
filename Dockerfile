@@ -13,15 +13,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy dependency requirements and package configuration
+# Copy dependency definition
 COPY pyproject.toml requirements.txt ./
 
-# Install python dependencies and project package
-RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install --no-cache-dir -e .
+# Install python dependencies first to cache layer
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application source code
+# Copy all application source code (including README.md)
 COPY . .
+
+# Install project package
+RUN pip install --no-cache-dir --no-deps -e .
 
 # Ensure directory for persistent SQLite data volume exists
 RUN mkdir -p /data
