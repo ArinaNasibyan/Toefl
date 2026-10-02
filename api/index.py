@@ -67,6 +67,7 @@ async def health_check() -> dict[str, str]:
     return {"status": "ok", "service": "toefl-telegram-bot"}
 
 
+@app.post("/webhook")
 @app.post("/api/webhook")
 async def telegram_webhook(request: Request) -> Response:
     """Process incoming Telegram updates from webhook."""
@@ -82,13 +83,17 @@ async def telegram_webhook(request: Request) -> Response:
         return JSONResponse(content={"ok": False, "error": str(exc)}, status_code=status.HTTP_200_OK)
 
 
+@app.get("/set_webhook")
 @app.get("/api/set_webhook")
 async def set_webhook(request: Request) -> dict[str, Any]:
     """Helper endpoint to register the current Vercel deployment URL with Telegram."""
-    base_url = str(request.base_url).rstrip("/")
-    # Force https on Vercel
-    if base_url.startswith("http://") and "localhost" not in base_url and "127.0.0.1" not in base_url:
-        base_url = "https://" + base_url.split("http://", 1)[1]
+    host = request.headers.get("x-forwarded-host") or request.headers.get("host")
+    if host and "localhost" not in host and "127.0.0.1" not in host:
+        base_url = f"https://{host}"
+    else:
+        base_url = str(request.base_url).rstrip("/")
+        if base_url.startswith("http://") and "localhost" not in base_url and "127.0.0.1" not in base_url:
+            base_url = "https://" + base_url.split("http://", 1)[1]
 
     webhook_url = f"{base_url}/api/webhook"
     result = await bot.set_webhook(url=webhook_url, drop_pending_updates=True)
@@ -99,6 +104,7 @@ async def set_webhook(request: Request) -> dict[str, Any]:
     }
 
 
+@app.get("/webhook_info")
 @app.get("/api/webhook_info")
 async def get_webhook_info() -> dict[str, Any]:
     """Inspect current Telegram webhook status."""
