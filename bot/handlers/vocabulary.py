@@ -148,7 +148,8 @@ async def submit_vocabulary_mini_test_answer(
     state: FSMContext,
     session_factory: async_sessionmaker[AsyncSession],
 ) -> None:
-    if callback.message is None:
+    telegram_user = callback.from_user
+    if callback.message is None or telegram_user is None:
         return
 
     data = await state.get_data()
@@ -177,7 +178,8 @@ async def submit_vocabulary_mini_test_answer(
     if is_correct:
         score += 1
 
-    is_last_question = current_index + 1 >= total_questions
+    is_last_question = (current_index + 1 >= total_questions) or (current_index + 1 >= len(questions_data))
+
 
     async with session_factory() as session:
         submit_answer = SubmitVocabularyAnswerUseCase(
