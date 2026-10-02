@@ -49,9 +49,21 @@ async def ensure_db_initialized() -> None:
             logger.exception("Failed to initialize database schema")
 
 
+import os
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await ensure_db_initialized()
+    render_url = os.environ.get("RENDER_EXTERNAL_URL")
+    if render_url:
+        webhook_url = f"{render_url.rstrip('/')}/api/webhook"
+        logger.info("Automatically setting webhook on Render: %s", webhook_url)
+        try:
+            res = await bot.set_webhook(url=webhook_url, drop_pending_updates=True)
+            logger.info("Successfully registered webhook with Telegram: %s", res)
+        except Exception:
+            logger.exception("Failed to set webhook on startup")
     yield
     await bot.session.close()
     await engine.dispose()
@@ -61,6 +73,7 @@ app = FastAPI(title="TOEFL Telegram Bot Serverless API", lifespan=lifespan)
 
 
 @app.get("/")
+@app.get("/health")
 @app.get("/api")
 @app.get("/api/health")
 async def health_check() -> dict[str, str]:

@@ -1,16 +1,18 @@
 services:
   - type: web
     name: toefl-telegram-bot
-    runtime: docker
+    runtime: python
     plan: free
     region: frankfurt
     autoDeploy: true
     healthCheckPath: /health
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.index:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: BOT_TOKEN
-        sync: false
+        value: 8252283205:AAFx4xhxUE829bvDiaPTKZJzfEG_L3gAaVc
       - key: DATABASE_URL
-        value: sqlite+aiosqlite:///./data/database.db
+        value: postgresql+asyncpg://postgres:Desna20091An@db.qysrspvrpeobxnbnckgz.supabase.co:5432/postgres
       - key: DEBUG
         value: "false"
       - key: ADMIN_IDS
