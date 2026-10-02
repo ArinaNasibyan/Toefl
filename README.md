@@ -1,3 +1,13 @@
+---
+title: TOEFL Telegram Bot
+emoji: 📚
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # TOEFL Preparation Telegram Bot
 
 A professional, feature-rich TOEFL preparation bot built with **aiogram 3.x**, **SQLAlchemy (Async)**, and **Clean Architecture**.
@@ -68,13 +78,3 @@ pytest
 ```bash
 python -m app.main
 ```
-
----
-
-## 🐳 Docker & Cloud Deployment (Railway)
-
-The repository is production-ready for containerized deployment:
-
-- **Dockerfile**: Built on `python:3.12-slim` with `ffmpeg` installed.
-- **Persistent Volume**: Mount a persistent volume at `/data` with `DATABASE_URL=sqlite+aiosqlite:////data/database.db`.
-- **railway.toml**: Pre-configured with `restartPolicyType = "ON_FAILURE"`.
