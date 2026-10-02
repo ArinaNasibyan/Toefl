@@ -1,8 +1,0 @@
-.agents/
-.claude/
-.git/
-.pytest_cache/
-.venv/
-
-*.db
-*.session
