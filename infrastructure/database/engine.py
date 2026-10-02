@@ -1,6 +1,8 @@
+import os
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Any
 
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
@@ -8,12 +10,30 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
     create_async_engine,
 )
+from sqlalchemy.pool import NullPool
 
 from infrastructure.database.models import Base
 
 
-def create_database_engine(database_url: str, *, echo: bool = False) -> AsyncEngine:
-    """Create the async SQLAlchemy engine."""
+def create_database_engine(
+    database_url: str,
+    *,
+    echo: bool = False,
+    is_serverless: bool = False,
+) -> AsyncEngine:
+    """Create the async SQLAlchemy engine supporting SQLite and PostgreSQL (Supabase)."""
+    # Normalize postgres URLs to use asyncpg driver
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql+asyncpg://", 1)
+    elif database_url.startswith("postgresql://") and not database_url.startswith("postgresql+"):
+        database_url = database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+    engine_kwargs: dict[str, Any] = {
+        "echo": echo,
+        "future": True,
+        "pool_pre_ping": True,
+    }
+
     if "sqlite" in database_url:
         # Extract database path from URL and ensure parent directory exists
         clean_path = database_url.split(":///", 1)[-1]
@@ -21,13 +41,13 @@ def create_database_engine(database_url: str, *, echo: bool = False) -> AsyncEng
             db_dir = Path(clean_path).parent
             if db_dir and not db_dir.exists():
                 db_dir.mkdir(parents=True, exist_ok=True)
+    elif "postgresql" in database_url:
+        # Use NullPool in serverless environments (Vercel) to prevent connection leaks
+        if is_serverless or os.getenv("VERCEL"):
+            engine_kwargs["poolclass"] = NullPool
 
-    return create_async_engine(
-        database_url,
-        echo=echo,
-        future=True,
-        pool_pre_ping=True,
-    )
+    return create_async_engine(database_url, **engine_kwargs)
+
 
 
 
