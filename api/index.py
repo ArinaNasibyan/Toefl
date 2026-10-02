@@ -49,32 +49,13 @@ async def ensure_db_initialized() -> None:
             logger.exception("Failed to initialize database schema")
 
 
-import asyncio
 import os
-import aiohttp
-
-
-async def _keep_alive_loop(base_url: str) -> None:
-    """Periodic self-ping loop every 10 minutes to keep Render container warm."""
-    health_url = f"{base_url.rstrip('/')}/health"
-    await asyncio.sleep(60)  # Initial wait before starting pings
-    while True:
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(health_url, timeout=10) as resp:
-                    logger.info("Keep-alive self ping status: %s", resp.status)
-        except asyncio.CancelledError:
-            break
-        except Exception as exc:
-            logger.warning("Keep-alive ping exception: %s", exc)
-        await asyncio.sleep(600)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await ensure_db_initialized()
     render_url = os.environ.get("RENDER_EXTERNAL_URL")
-    keep_alive_task = None
     if render_url:
         webhook_url = f"{render_url.rstrip('/')}/api/webhook"
         logger.info("Automatically setting webhook on Render: %s", webhook_url)
@@ -83,12 +64,9 @@ async def lifespan(app: FastAPI):
             logger.info("Successfully registered webhook with Telegram: %s", res)
         except Exception:
             logger.exception("Failed to set webhook on startup")
-        keep_alive_task = asyncio.create_task(_keep_alive_loop(render_url))
 
     yield
 
-    if keep_alive_task:
-        keep_alive_task.cancel()
     await bot.session.close()
     await engine.dispose()
 
