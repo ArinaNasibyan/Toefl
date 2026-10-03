@@ -138,8 +138,6 @@ async def start_daily_challenge(
                 callback, state, session_factory, user.id, passages, challenge.content_id
             )
 
-        await session.commit()
-
 
 async def _start_vocabulary_challenge(
     callback: CallbackQuery,
@@ -318,6 +316,12 @@ async def _handle_vocabulary_answer(
     if is_correct:
         score += 1
 
+    feedback = "✅ Correct!" if is_correct else f"❌ Wrong. Correct: {question.options[question.correct_index]}"
+    try:
+        await callback.answer(text=feedback, show_alert=True)
+    except Exception:
+        pass
+
     # Record attempt
     async with session_factory() as session:
         attempt_repo = AttemptRepository(session)
@@ -328,9 +332,6 @@ async def _handle_vocabulary_answer(
             is_correct=is_correct,
         )
         await session.commit()
-
-    feedback = "✅ Correct!" if is_correct else f"❌ Wrong. Correct: {question.options[question.correct_index]}"
-    await callback.answer(text=feedback, show_alert=True)
 
     total_questions = len(questions_data)
     is_last_question = current_index + 1 >= total_questions
@@ -381,6 +382,12 @@ async def _handle_reading_answer(
     if is_correct:
         score += 1
 
+    feedback = "✅ Correct!" if is_correct else f"❌ Wrong. Correct: {question.options[question.correct_index]}"
+    try:
+        await callback.answer(text=feedback, show_alert=True)
+    except Exception:
+        pass
+
     # Record attempt
     async with session_factory() as session:
         attempt_repo = AttemptRepository(session)
@@ -391,9 +398,6 @@ async def _handle_reading_answer(
             is_correct=is_correct,
         )
         await session.commit()
-
-    feedback = "✅ Correct!" if is_correct else f"❌ Wrong. Correct: {question.options[question.correct_index]}"
-    await callback.answer(text=feedback, show_alert=True)
 
     total_questions = len(passage.questions)
     is_last_question = current_index + 1 >= total_questions

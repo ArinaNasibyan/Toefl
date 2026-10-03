@@ -209,7 +209,6 @@ async def start_listening_test(
             return
 
         user_id = user.id
-        await session.commit()
 
     passage = ListeningPassage.from_state_dict(passage_data)
     total_questions = len(passage.questions)
@@ -280,6 +279,11 @@ async def submit_listening_answer(
         await callback.answer(text="Invalid answer.", show_alert=True)
         return
 
+    try:
+        await callback.answer()
+    except Exception:
+        pass
+
     is_correct = selected_index == question.correct_index
     if is_correct:
         score += 1
@@ -298,12 +302,6 @@ async def submit_listening_answer(
             finish_test=is_last_question,
         )
         await session.commit()
-
-    # Clear loading spinner immediately
-    try:
-        await callback.answer()
-    except Exception:
-        pass
 
     await state.update_data(score=score)
 

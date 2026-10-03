@@ -208,7 +208,18 @@ async def submit_reading_answer(
     if is_correct:
         score += 1
 
+    # Answer immediately with feedback popup for instant UX response
+    feedback = _format_answer_feedback(question, is_correct)
+    try:
+        await callback.answer(text=feedback, show_alert=True)
+    except Exception:
+        pass
+
     is_last_question = (current_index + 1 >= total_questions) or (current_index + 1 >= len(passage.questions))
+
+    newly_unlocked = []
+    streak_increased = False
+    new_streak = 0
 
     async with session_factory() as session:
         submit_answer = SubmitReadingAnswerUseCase(
@@ -221,19 +232,8 @@ async def submit_reading_answer(
             is_correct=is_correct,
             finish_test=is_last_question,
         )
-        await session.commit()
 
-    feedback = _format_answer_feedback(question, is_correct)
-    await callback.answer(text=feedback, show_alert=True)
-
-    if is_last_question:
-        # Update streak and check for newly unlocked achievements
-        newly_unlocked = []
-        streak_increased = False
-        new_streak = 0
-
-        async with session_factory() as session:
-            # Update user's streak
+        if is_last_question:
             update_streak = UpdateStreakUseCase(UserRepository(session))
             new_streak, streak_increased = await update_streak.execute(user_id=user_id)
 
@@ -258,7 +258,8 @@ async def submit_reading_answer(
                 test_total=total_questions,
                 test_type="reading_passage",
             )
-            await session.commit()
+
+        await session.commit()
 
         await state.set_state(ReadingStates.quiz_finished)
         result_text = _format_test_results(score, total_questions)
