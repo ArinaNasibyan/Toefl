@@ -54,6 +54,12 @@ def create_database_engine(
         # Use NullPool in serverless environments (Vercel) to prevent connection leaks
         if is_serverless or os.getenv("VERCEL"):
             engine_kwargs["poolclass"] = NullPool
+        else:
+            engine_kwargs["pool_size"] = 10
+            engine_kwargs["max_overflow"] = 20
+            engine_kwargs["pool_recycle"] = 600
+            engine_kwargs["pool_pre_ping"] = False
+
         if "pooler.supabase.com" in database_url or ":6543" in database_url:
             engine_kwargs["connect_args"] = {"statement_cache_size": 0}
 

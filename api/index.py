@@ -24,7 +24,8 @@ logger = logging.getLogger(__name__)
 settings = get_settings()
 configure_logging(debug=settings.debug)
 
-engine = create_database_engine(settings.database_url, echo=settings.debug, is_serverless=True)
+is_serverless = bool(os.getenv("VERCEL"))
+engine = create_database_engine(settings.database_url, echo=settings.debug, is_serverless=is_serverless)
 session_factory = create_session_factory(engine)
 
 bot = Bot(
@@ -86,7 +87,6 @@ async def health_check() -> dict[str, str]:
 @app.post("/api/webhook")
 async def telegram_webhook(request: Request) -> Response:
     """Process incoming Telegram updates from webhook."""
-    await ensure_db_initialized()
     try:
         update_data = await request.json()
         update = Update.model_validate(update_data, context={"bot": bot})

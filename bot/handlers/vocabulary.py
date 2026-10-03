@@ -83,6 +83,11 @@ async def start_vocabulary_mini_test(
     state: FSMContext,
     session_factory: async_sessionmaker[AsyncSession],
 ) -> None:
+    try:
+        await callback.answer()
+    except Exception:
+        pass
+
     telegram_user = callback.from_user
     if telegram_user is None or callback.message is None:
         return
@@ -113,7 +118,6 @@ async def start_vocabulary_mini_test(
             return
 
         user_id = user.id
-        await session.commit()
 
     await state.clear()
     await state.set_state(VocabularyMiniTestStates.waiting_for_answer)
@@ -135,7 +139,6 @@ async def start_vocabulary_mini_test(
         ),
         reply_markup=build_quiz_answer_keyboard(first_question.options),
     )
-    await callback.answer()
 
 
 @router.callback_query(
@@ -178,8 +181,15 @@ async def submit_vocabulary_mini_test_answer(
     if is_correct:
         score += 1
 
+    # Answer immediately with feedback popup for instant UX response
+    feedback = _format_answer_feedback(question, is_correct)
+    await callback.answer(text=feedback, show_alert=True)
+
     is_last_question = (current_index + 1 >= total_questions) or (current_index + 1 >= len(questions_data))
 
+    newly_unlocked = []
+    streak_increased = False
+    new_streak = 0
 
     async with session_factory() as session:
         submit_answer = SubmitVocabularyAnswerUseCase(
@@ -193,19 +203,8 @@ async def submit_vocabulary_mini_test_answer(
             is_correct=is_correct,
             finish_quiz=is_last_question,
         )
-        await session.commit()
 
-    feedback = _format_answer_feedback(question, is_correct)
-    await callback.answer(text=feedback, show_alert=True)
-
-    if is_last_question:
-        # Update streak and check for newly unlocked achievements
-        newly_unlocked = []
-        streak_increased = False
-        new_streak = 0
-
-        async with session_factory() as session:
-            # Update user's streak
+        if is_last_question:
             update_streak = UpdateStreakUseCase(UserRepository(session))
             new_streak, streak_increased = await update_streak.execute(user_id=user_id)
 
@@ -230,7 +229,8 @@ async def submit_vocabulary_mini_test_answer(
                 test_total=total_questions,
                 test_type="vocabulary_mini_test",
             )
-            await session.commit()
+
+        await session.commit()
 
         await state.set_state(VocabularyMiniTestStates.quiz_finished)
         result_text = _format_quiz_results(score, total_questions)

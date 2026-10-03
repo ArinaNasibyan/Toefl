@@ -42,7 +42,6 @@ async def show_achievements(
         unlocked_achievement_records = await achievement_repository.get_unlocked_by_user_id(
             user.id
         )
-        await session.commit()
 
     # Load all achievement definitions
     all_achievements = await JsonContentLoader().load_achievements()

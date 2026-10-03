@@ -40,8 +40,6 @@ async def show_statistics(
             )
             return
 
-        await session.commit()
-
     await message.answer(
         text=_format_statistics(statistics),
         reply_markup=build_main_menu_keyboard(),

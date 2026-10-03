@@ -118,6 +118,11 @@ async def start_reading_test(
         await state.clear()
         return
 
+    try:
+        await callback.answer()
+    except Exception:
+        pass
+
     async with session_factory() as session:
         user_repository = UserRepository(session)
         user = await user_repository.get_by_telegram_id(telegram_user.id)
@@ -130,7 +135,6 @@ async def start_reading_test(
             return
 
         user_id = user.id
-        await session.commit()
 
     passage = ReadingPassage.from_state_dict(passage_data)
     total_questions = len(passage.questions)

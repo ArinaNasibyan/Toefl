@@ -93,6 +93,11 @@ async def start_daily_challenge(
     state: FSMContext,
     session_factory: async_sessionmaker[AsyncSession],
 ) -> None:
+    try:
+        await callback.answer()
+    except Exception:
+        pass
+
     telegram_user = callback.from_user
     if telegram_user is None or callback.message is None:
         return
@@ -134,8 +139,6 @@ async def start_daily_challenge(
             )
 
         await session.commit()
-
-    await callback.answer()
 
 
 async def _start_vocabulary_challenge(
