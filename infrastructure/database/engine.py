@@ -28,6 +28,15 @@ def create_database_engine(
     elif database_url.startswith("postgresql://") and not database_url.startswith("postgresql+"):
         database_url = database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
 
+    # Automatically route Supabase direct IPv6 endpoints to IPv4 connection pooler
+    if "db.qysrspvrpeobxnbnckgz.supabase.co" in database_url:
+        database_url = database_url.replace(
+            "db.qysrspvrpeobxnbnckgz.supabase.co",
+            "aws-0-ap-southeast-1.pooler.supabase.com",
+        )
+        if "://postgres:" in database_url:
+            database_url = database_url.replace("://postgres:", "://postgres.qysrspvrpeobxnbnckgz:", 1)
+
     engine_kwargs: dict[str, Any] = {
         "echo": echo,
         "future": True,
@@ -45,6 +54,8 @@ def create_database_engine(
         # Use NullPool in serverless environments (Vercel) to prevent connection leaks
         if is_serverless or os.getenv("VERCEL"):
             engine_kwargs["poolclass"] = NullPool
+        if "pooler.supabase.com" in database_url or ":6543" in database_url:
+            engine_kwargs["connect_args"] = {"statement_cache_size": 0}
 
     return create_async_engine(database_url, **engine_kwargs)
 

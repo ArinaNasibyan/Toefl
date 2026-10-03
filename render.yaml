@@ -12,7 +12,7 @@ services:
       - key: BOT_TOKEN
         value: 8252283205:AAFx4xhxUE829bvDiaPTKZJzfEG_L3gAaVc
       - key: DATABASE_URL
-        value: postgresql+asyncpg://postgres:Desna20091An@db.qysrspvrpeobxnbnckgz.supabase.co:5432/postgres
+        value: postgresql+asyncpg://postgres.qysrspvrpeobxnbnckgz:Desna20091An@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
       - key: DEBUG
         value: "false"
       - key: ADMIN_IDS
