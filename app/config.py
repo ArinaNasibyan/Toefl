@@ -10,6 +10,10 @@ class Settings(BaseSettings):
 
     bot_token: SecretStr = Field(..., alias="BOT_TOKEN")
     webhook_secret: SecretStr | None = Field(default=None, alias="WEBHOOK_SECRET")
+    webhook_base_url: str = Field(
+        default="https://toefl-telegram-bot-h5u5.onrender.com",
+        alias="WEBHOOK_BASE_URL",
+    )
     admin_ids_raw: str = Field(default="", alias="ADMIN_IDS")
     database_url: str = Field(
         default="sqlite+aiosqlite:///./database.db",

@@ -58,7 +58,7 @@ async def ensure_db_initialized() -> None:
 async def lifespan(app: FastAPI):
     await ensure_db_initialized()
     render_url = os.environ.get("RENDER_EXTERNAL_URL")
-    if render_url:
+    if render_url and render_url.rstrip("/") == settings.webhook_base_url.rstrip("/"):
         webhook_url = f"{render_url.rstrip('/')}/api/webhook"
         logger.info("Automatically setting webhook on Render: %s", webhook_url)
         try:
@@ -66,6 +66,8 @@ async def lifespan(app: FastAPI):
             logger.info("Successfully registered webhook with Telegram: %s", res)
         except Exception:
             logger.exception("Failed to set webhook on startup")
+    elif render_url:
+        logger.info("Skipping webhook registration on non-primary Render service: %s", render_url)
 
     yield
 
