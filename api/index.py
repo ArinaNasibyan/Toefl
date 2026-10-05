@@ -1,5 +1,7 @@
 import logging
+import os
 from contextlib import asynccontextmanager
+from hmac import compare_digest
 from typing import Any
 
 from aiogram import Bot
@@ -23,6 +25,7 @@ logger = logging.getLogger(__name__)
 # Application settings and singletons
 settings = get_settings()
 configure_logging(debug=settings.debug)
+webhook_secret_token = settings.webhook_secret_token
 
 is_serverless = bool(os.getenv("VERCEL"))
 engine = create_database_engine(settings.database_url, echo=settings.debug, is_serverless=is_serverless)
@@ -48,9 +51,7 @@ async def ensure_db_initialized() -> None:
             _db_initialized = True
         except Exception:
             logger.exception("Failed to initialize database schema")
-
-
-import os
+            raise
 
 
 @asynccontextmanager
@@ -61,7 +62,7 @@ async def lifespan(app: FastAPI):
         webhook_url = f"{render_url.rstrip('/')}/api/webhook"
         logger.info("Automatically setting webhook on Render: %s", webhook_url)
         try:
-            res = await bot.set_webhook(url=webhook_url, drop_pending_updates=True)
+            res = await bot.set_webhook(url=webhook_url, secret_token=webhook_secret_token)
             logger.info("Successfully registered webhook with Telegram: %s", res)
         except Exception:
             logger.exception("Failed to set webhook on startup")
@@ -87,36 +88,23 @@ async def health_check() -> dict[str, str]:
 @app.post("/api/webhook")
 async def telegram_webhook(request: Request) -> Response:
     """Process incoming Telegram updates from webhook."""
+    if not compare_digest(
+        request.headers.get("x-telegram-bot-api-secret-token", ""),
+        webhook_secret_token,
+    ):
+        return Response(status_code=status.HTTP_403_FORBIDDEN)
+
     try:
         update_data = await request.json()
         update = Update.model_validate(update_data, context={"bot": bot})
         await dispatcher.feed_update(bot, update)
         return JSONResponse(content={"ok": True}, status_code=status.HTTP_200_OK)
-    except Exception as exc:
-        logger.exception("Error processing webhook update: %s", exc)
-        # Always return 200 OK so Telegram does not aggressively retry failed updates
-        return JSONResponse(content={"ok": False, "error": str(exc)}, status_code=status.HTTP_200_OK)
-
-
-@app.get("/set_webhook")
-@app.get("/api/set_webhook")
-async def set_webhook(request: Request) -> dict[str, Any]:
-    """Helper endpoint to register the current Vercel deployment URL with Telegram."""
-    host = request.headers.get("x-forwarded-host") or request.headers.get("host")
-    if host and "localhost" not in host and "127.0.0.1" not in host:
-        base_url = f"https://{host}"
-    else:
-        base_url = str(request.base_url).rstrip("/")
-        if base_url.startswith("http://") and "localhost" not in base_url and "127.0.0.1" not in base_url:
-            base_url = "https://" + base_url.split("http://", 1)[1]
-
-    webhook_url = f"{base_url}/api/webhook"
-    result = await bot.set_webhook(url=webhook_url, drop_pending_updates=True)
-    return {
-        "ok": True,
-        "webhook_url": webhook_url,
-        "result": result,
-    }
+    except Exception:
+        logger.exception("Error processing webhook update")
+        return JSONResponse(
+            content={"ok": False},
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
 
 
 @app.get("/webhook_info")

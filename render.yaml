@@ -10,10 +10,12 @@ services:
     startCommand: uvicorn api.index:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: BOT_TOKEN
-        value: 8252283205:AAFx4xhxUE829bvDiaPTKZJzfEG_L3gAaVc
+        sync: false
       - key: DATABASE_URL
-        value: postgresql+asyncpg://postgres.qysrspvrpeobxnbnckgz:Desna20091An@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
       - key: DEBUG
         value: "false"
       - key: ADMIN_IDS
-        value: "5423668260"
+        sync: false

@@ -1,4 +1,5 @@
 from functools import lru_cache
+from hashlib import sha256
 
 from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -8,6 +9,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     bot_token: SecretStr = Field(..., alias="BOT_TOKEN")
+    webhook_secret: SecretStr | None = Field(default=None, alias="WEBHOOK_SECRET")
     admin_ids_raw: str = Field(default="", alias="ADMIN_IDS")
     database_url: str = Field(
         default="sqlite+aiosqlite:///./database.db",
@@ -41,6 +43,16 @@ class Settings(BaseSettings):
     @property
     def token(self) -> str:
         return self.bot_token.get_secret_value()
+
+    @property
+    def webhook_secret_token(self) -> str:
+        configured_secret = (
+            self.webhook_secret.get_secret_value()
+            if self.webhook_secret is not None
+            else ""
+        )
+        seed = configured_secret or self.token
+        return sha256(seed.encode()).hexdigest()
 
 
 @lru_cache(maxsize=1)
