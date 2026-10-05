@@ -1,0 +1,16 @@
+name: Keep Telegram webhook responsive
+
+on:
+  schedule:
+    - cron: "7,17,27,37,47,57 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check Render health endpoint
+        run: curl --fail --silent --show-error --max-time 90 --retry 2 https://toefl-telegram-bot-h5u5.onrender.com/health
